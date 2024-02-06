@@ -5,12 +5,15 @@ dotenv.config();
 
 import jobsRoutes from './routes/jobsRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
+import connectDB from './config/db.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+
+connectDB();
 
 app.use('/api/jobs', jobsRoutes);
 app.use('/api/admin', adminRoutes);
