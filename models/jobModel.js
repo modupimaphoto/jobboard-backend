@@ -2,16 +2,24 @@ import mongoose from 'mongoose';
 
 const jobSchema = mongoose.Schema({
     title: {
-        type:String,
+        type: String,
         required: true
+    },
+    status: {
+      type: String,
+      required: true
+    },
+    company: {
+      type: String,
+      required: true
     },
     province: {
         type: String,
         required: true
     },
-    industry: {
-        type: String,
-        required: true
+    salary: {
+      type: String,
+      required: true
     },
     body: {
         type: String,
@@ -23,4 +31,6 @@ const jobSchema = mongoose.Schema({
     }
 });
 
-const Jobs = mongoose.model('Jobs', jobSchema);
+const Job = mongoose.model('Jobs', jobSchema);
+
+export default Job;
