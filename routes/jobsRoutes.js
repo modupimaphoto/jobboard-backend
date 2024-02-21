@@ -1,4 +1,5 @@
 import express from 'express';
+import Job from '../models/jobModel.js';
 
 const router = express.Router();
 
@@ -8,10 +9,19 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
-    res.status(201).json({
-        "message": "Create Job"
+router.post('/', async (req, res) => {
+    /*
+    const { title, status, company, province, salary, body } = req.body;
+    const newJob = Job.create({
+      title,
+      status,
+      company,
+      province,
+      salary,
+      body
     });
+    */
+    console.log(req.body);
 });
 
 router.post('/', (req, res) => {
